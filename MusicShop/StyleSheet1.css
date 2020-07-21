@@ -1,0 +1,48 @@
+﻿body {
+    background-color: #ea7252;
+    margin: auto;
+    width: 90%;
+}
+
+header {
+    background-color: #d7c5af;
+}
+
+footer {
+    background-color: #d7c5af;
+}
+
+
+.headerMenu {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.center {
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    background-color: #efd28a;
+    width: 100%;
+    margin: auto;
+}
+
+    .content table {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+ 
+
+.Login1 {
+    background-color: #efd28a;
+    border-color: #CCCC99;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+}

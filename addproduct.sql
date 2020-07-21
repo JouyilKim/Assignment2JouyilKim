@@ -1,0 +1,1 @@
+﻿insert into tblProduct values(0, 'Stratocaster', '2000', 'American made electric guitar', 'Guitar', 'Fender', '~/images/stratocaster.jpg')

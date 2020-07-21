@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="MusicShop.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Music Shop</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         <link rel="stylesheet" href="StyleSheet1.css" type="text/css" />
+    </asp:ContentPlaceHolder>
+     <link rel="stylesheet" href="~/StyleSheet1.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <table>
+                <tr>
+                    <td rowspan="3">
+                        <img src="./images/main logo.png" width="150" height="150" alt="error" />
+                    </td>
+                    <td style="text-align: right">
+                        <asp:LinkButton ID="linkLogin" runat="server" OnClick="linkLogin_Click">Login</asp:LinkButton>&nbsp
+                        <asp:LinkButton ID="linkAcc" runat="server" OnClick="linkAcc_Click">My Account</asp:LinkButton>
+                    </td>
+                    <td style="text-align: center">
+                        <asp:LinkButton ID="linkCart" runat="server" OnClick="linkCart_Click">Cart</asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="headerMenu" colspan="1">
+                        <asp:Menu ID="Menu1" runat="server" BackColor="#20547b" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1.3em" ForeColor="White" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                            <DynamicHoverStyle BackColor="#368faa" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="20px" />
+                            <DynamicMenuStyle BackColor="#20547b" ForeColor="White" />
+                            <DynamicSelectedStyle BackColor="white" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="Default.aspx" Text="HOME" Value="HOME"></asp:MenuItem>
+                                <asp:MenuItem Text="PRODUCTS" Value="PRODUCTS">
+                                    <asp:MenuItem Text="Instruments" Value="Instruments">
+                                        <asp:MenuItem Text="Guitar" Value="Guitar" NavigateUrl="~/ProductLoad.aspx?value=Guitar"></asp:MenuItem>
+                                        <asp:MenuItem Text="Bass" Value="Bass" NavigateUrl="~/ProductLoad.aspx?value=Bass"></asp:MenuItem>
+                                        <asp:MenuItem Text="Drum" Value="Drum" NavigateUrl="~/ProductLoad.aspx?value=Drum"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Accessories" Value="Accessories">
+                                        <asp:MenuItem Text="Mic" Value="Mic" NavigateUrl="~/ProductLoad.aspx?value=Mic"></asp:MenuItem>
+                                        <asp:MenuItem Text="Accessories" Value="Accessories" NavigateUrl="~/ProductLoad.aspx?value=Accessories"></asp:MenuItem>
+                                        <asp:MenuItem Text="Others" Value="Others" NavigateUrl="~/ProductLoad.aspx?value=Others"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="AboutUs.aspx" Text="ABOUT US" Value="ABOUT US"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="ContactUs.aspx" Text="CONTACT US" Value="CONTACT US"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#368faa" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="20px" />
+                            <StaticSelectedStyle BackColor="#20547b" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                            <CurrentNodeStyle ForeColor="#333333" />
+                            <NodeStyle Font-Bold="True" ForeColor="#284E98" />
+                            <PathSeparatorStyle Font-Bold="True" ForeColor="#507CD1" />
+                            <RootNodeStyle Font-Bold="True" ForeColor="#507CD1" />
+                        </asp:SiteMapPath>
+                    </td>
+                </tr>
+            </table>
+        </header>
+
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        </div>
+        <footer>
+            <table>
+                <tr>
+                    <td>
+                        <img src="./images/main logo.png" width="100" height="100" alt="error" />
+                    </td>
+                    <td>
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Arrows">
+                            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                            <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                            <ParentNodeStyle Font-Bold="False" />
+                            <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+                        </asp:TreeView>
+
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </form>
+</body>
+</html>
